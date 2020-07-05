@@ -5,6 +5,12 @@
 ### Description
 The project uses a python script to create an interactive experience in exploring bike sharing systems in three major US cities - Chicago, New York City, and Washington. The script takes raw input data from CSV files and computes descriptive statistics interactively through the terminal.
 
+### Statistics Computed
+1. Popular times of travel
+2. Popular stations and trips
+3. Trip duration
+4. User info
+
 ### Files used
 - chicago.csv
 - new_york_city.csv
