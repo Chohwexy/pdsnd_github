@@ -22,8 +22,7 @@ def get_filters():
     # get user input for city (chicago, new york city, washington).
     while True:
         try:
-            city = input('Would you like to see data for Chicago, New York City, or Washington?\n')
-            city = city.lower()
+            city = input('Would you like to see data for Chicago, New York City, or Washington?\n').lower()
             CITY_DATA[city]
             break
         except KeyError:
@@ -37,14 +36,13 @@ def get_filters():
 
     while True:
         try:
-            filter = input('Would you like to filter the dat by month, day, both, or not at all? Type "none" for no time filter.\n')
-            filter = filter.lower()
+            filter = input('Would you like to filter the data by month, day, both, or not at all? Type "none" for no time filter.\n').lower()
             filters.index(filter)
             break
         except ValueError:
             print("Oops! '{}' is not a valid filter. Try again... ".format(filter))
         except KeyboardInterrupt:
-            print('That was not valid filter. Try agan...')
+            print('That was not valid filter. Try again...')
 
     print()
     month = 'all'
@@ -54,8 +52,7 @@ def get_filters():
     if filter == 'month' or filter == 'both':
         while True:
             try:
-                month = input('Which month? {}, {}, {}, {}, {}, or {}?\n'.format(*months))
-                month = month.title()
+                month = input('Which month? {}, {}, {}, {}, {}, or {}?\n'.format(*months)).title()
                 months.index(month)
                 print()
                 break
@@ -68,8 +65,7 @@ def get_filters():
     if filter =='day' or filter == 'both':
         while True:
             try:
-                day = input('Which day? {}, {}, {}, {}, {}, {}, {}?\n'.format(*days))
-                day = day.title()
+                day = input('Which day? {}, {}, {}, {}, {}, {}, {}?\n'.format(*days)).title()
                 days.index(day)
                 break
             except ValueError:
@@ -254,7 +250,7 @@ def print_raw_data(df):
     raw_data = input('\nWould you like to see the raw data? Enter yes or no.\n')
     if raw_data.lower() == 'yes':
         i = 0
-        while i <= len(df1.index) - 5:
+        while True:
             print(df1[i:i+5])
             i += 5
             raw_data = input('\nWould you like to see 5 more rows of data? Enter yes or no.\n')
