@@ -37,14 +37,14 @@ def get_filters():
 
     while True:
         try:
-            filter = input('Would you like to filter the dat by month, day, both, or not at all? Type "none" for no time filter.\n')
+            filter = input('Would you like to filter the data by month, day, both, or not at all? Type "none" for no time filter.\n')
             filter = filter.lower()
             filters.index(filter)
             break
         except ValueError:
             print("Oops! '{}' is not a valid filter. Try again... ".format(filter))
         except KeyboardInterrupt:
-            print('That was not valid filter. Try agan...')
+            print('That was not valid filter. Try again...')
 
     print()
     month = 'all'
