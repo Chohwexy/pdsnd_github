@@ -226,7 +226,7 @@ def print_raw_data(df):
     raw_data = input('\nWould you like to see the raw data? Enter yes or no.\n')
     if raw_data.lower() == 'yes':
         i = 0
-        while i <= len(df1.index) - 5:
+        while True:
             print(df1[i:i+5])
             i += 5
             raw_data = input('\nWould you like to see 5 more rows of data? Enter yes or no.\n')
